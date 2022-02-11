@@ -10,7 +10,11 @@
         border: rem(2) solid hsl(0, 0%, 26%);
         width: rem(52);
         height: rem(52);
+        font-size: rem(32);
+        font-weight: 600;
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

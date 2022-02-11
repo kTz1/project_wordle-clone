@@ -4,7 +4,7 @@
 -6 tries to guess a 5-letter word from
 
 ## Making a guess
--detect keypresses is a letter
+-detect keypresses is a letter 
     -if keypress is a letter
         -update "letters" attribute and update tile markup(func)
             -update tile markup based on "letters" value(func)
@@ -12,8 +12,17 @@
             -delete last letter in "letters"(func)
                 -update tile markup based on "letters"
 
--typing in the letter will display the letter in the tile grid
--backspace will delete letters that
+-don't run update functions if "letters" = 5;
+
+## Submit guess
+-pressing Enter will submit the guess
+    -compare each letter with the corresponding letter in solution word
+    -update the state/color of the letter 
+    -if leeters are "correct" / green game is won
+    
+-store solution words in JSON object / array
+
+-guesses must be real word, "in word list"
 -guess colors (data-state): 
     -gray: "absent", letter not in word word
     -yellow: "present", letter in word, but in wrong position
