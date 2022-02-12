@@ -3,6 +3,11 @@
 ## Gameplay
 -6 tries to guess a 5-letter word from
 
+## Pick a solution word
+-store solution words in JSON object / array
+-when game is loaded, choose a random item from array
+-set solution to that word
+
 ## Making a guess
 -detect keypresses is a letter 
     -if keypress is a letter
@@ -19,8 +24,7 @@
     -compare each letter with the corresponding letter in solution word
     -update the state/color of the letter 
     -if leeters are "correct" / green game is won
-    
--store solution words in JSON object / array
+
 
 -guesses must be real word, "in word list"
 -guess colors (data-state): 
