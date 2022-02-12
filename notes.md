@@ -49,3 +49,5 @@
 
 -when submitting a guess:
     -tiles will flip up and background color will change based on guess
+    -tiles slight delay between each tile flipping
+    -backgrounud color changes when tiles is flat

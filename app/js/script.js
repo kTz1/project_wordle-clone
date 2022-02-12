@@ -25,9 +25,10 @@ document.addEventListener('keydown', (e) => {
 	} else if (e.key === 'Enter' && currentGuess.dataset.letters.length === 5) {
 		console.log('submit guess');
 		for (let i = 0; i < 5; i++) {
-			checkLetter(i);	
-			console.log(checkLetter(i))
-		}
+			setTimeout(() => {
+				revealTile(i, checkLetter(i));
+			}, i * 200);
+		};
 	}
 });
 
@@ -77,10 +78,39 @@ const checkLetter = (position) => {
 	else {
 		return checkLetterExists(guessedLetter) ? 'present' : 'absent';
 	}
-
-	// if not a match, if letter doesn't exist in solution return "absent"
 };
 
 const checkLetterExists = (letter) => {
 	return solutionWord.includes(letter);
+};
+
+const revealTile = (i, state) => {
+	console.log('reveal tile = ', i , state);
+	let tileNum = i + 1;
+	let tile = document.querySelector('#guessTile' + tileNum);
+
+	switch(status) {
+		case 'correct':
+			tile.classList.add('correct');
+			break;
+		case 'present':
+			tile.classList.add('present');
+			break;
+		case 'absent':
+			tile.classList.add('absent');
+			break;
+	};
+	flipTile(tileNum, state);
+};
+
+const flipTile = (tileNum, state) => {
+	let tile = document.querySelector('#guessTile' + tileNum);
+	tile.classList.add('flip-in');
+	setTimeout(() => {
+		tile.classList.add(state);
+	}, 250);
+	setTimeout(() => {
+		tile.classList.remove('flip-in');
+		tile.classList.add('flip-out');
+	}, 250);
 }
