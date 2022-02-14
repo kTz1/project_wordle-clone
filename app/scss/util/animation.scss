@@ -1,3 +1,6 @@
+@use 'functions' as *;
+
+// Flip tiles
 @keyframes flip-in {
     from {
         transform: rotateX(0deg);
@@ -23,5 +26,23 @@
 
 .flip-out {
     animation: flip-out 200ms;
+    animation-fill-mode: forwards;
+}
+
+// Jump tiles
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(rem(-10));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.jump {
+    animation: jump 200ms;
     animation-fill-mode: forwards;
 }

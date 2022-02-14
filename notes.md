@@ -43,7 +43,7 @@
 
 ## Interactions
 -when typing a letter:
-    -border of tile changes to light grays
+    -border of tile changes to light gray
     -blinking in animation with the letter changes
     -backspace will remove letter, border changes back to dark-gray
 

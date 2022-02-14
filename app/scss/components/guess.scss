@@ -5,6 +5,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: rem(3);
     width: rem(300);
+    margin-bottom: rem(10);
 
     &__tile {
         border: rem(2) solid hsl(0, 0%, 26%);
@@ -15,6 +16,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .has-letter {
+        border-color: hsl(0, 0%, 40%);
     }
 
     .correct {
